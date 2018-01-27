@@ -43,6 +43,9 @@ public:
 			else
 				m = Mat(header.height, header.width, CV_8UC1, content);
 			//imgs.push_back(m*w);
+			double a, b;
+			minMaxLoc(m, &a, &b);
+			cout << a << "->" << b<< endl;
 			imgs.push_back(m);
 		}
 		fclose(f);
@@ -77,7 +80,7 @@ int main()
 	namedWindow(win[0]);
 	namedWindow(win[1]);
 	namedWindow(win[2]);
-	for (int j = 0; j < 5; j++)
+	for (int j = 0; j < 1; j++)
 	{
 		Mat s;
 		GraphicPkg g(filename[j]);
